@@ -9,6 +9,7 @@ import com.refu.share_recipes.domain.exceptions.CategoryNotFoundException;
 import com.refu.share_recipes.repositories.CategoryRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -30,6 +31,10 @@ public class CategoryService {
 
   public List<Category> getAll() {
     return repository.findAll();
+  }
+
+  public Optional<Category> getById(String id) {
+    return repository.findById(id);
   }
 
   public Category update(String id, CategoryUpdateDTO data) {
