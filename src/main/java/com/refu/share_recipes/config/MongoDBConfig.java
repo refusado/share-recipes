@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 @Configuration
 public class MongoDBConfig {
   public MongoDatabaseFactory mongoConfigure() {
-    return new SimpleMongoClientDatabaseFactory("mongodb://localhost:27017/recipes_db");
+    return new SimpleMongoClientDatabaseFactory("mongodb://root:secret@localhost:27017/recipes_db?authSource=admin");
   }
 
   @Bean
